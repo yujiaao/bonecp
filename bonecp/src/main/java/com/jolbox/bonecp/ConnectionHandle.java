@@ -48,7 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.MapMaker;
 import com.jolbox.bonecp.hooks.ConnectionHook;
@@ -1733,7 +1733,7 @@ public class ConnectionHandle implements Connection,Serializable{
 
 		long timeMillis = System.currentTimeMillis();
 
-		return Objects.toStringHelper(this)
+		return MoreObjects.toStringHelper(this)
 				.add("url", this.pool.getConfig().getJdbcUrl())
 				.add("user", this.pool.getConfig().getUsername())
 				.add("debugHandle", this.debugHandle)

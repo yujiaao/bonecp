@@ -233,7 +233,6 @@ public class BoneCPConnectionProvider implements ConnectionProvider,Configurable
 		this.classLoader = classLoader;
 	}
 
-	@Override
 	@SuppressWarnings("rawtypes")
 	public boolean isUnwrappableAs(Class unwrapType) {
 		return ConnectionProvider.class.equals( unwrapType ) ||
@@ -241,7 +240,6 @@ public class BoneCPConnectionProvider implements ConnectionProvider,Configurable
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public <T> T unwrap(Class<T> unwrapType) {
 		if ( ConnectionProvider.class.equals( unwrapType ) ||
 				BoneCPConnectionProvider.class.isAssignableFrom( unwrapType ) ) {
@@ -266,12 +264,10 @@ public class BoneCPConnectionProvider implements ConnectionProvider,Configurable
 		 }
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
 	public void configure(Map configurationValues) {
 			configure(mapToProperties(configurationValues));
 	}
 
-	@Override
 	public void stop() {
 		close();
 	}
